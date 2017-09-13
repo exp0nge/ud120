@@ -19,4 +19,5 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
-
+print enron_data['PRENTICE JAMES'].keys()
+print sum([1 if isinstance(enron_data[p]['salary'], int) else 0 for p in enron_data.keys()])

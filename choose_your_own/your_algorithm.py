@@ -24,14 +24,19 @@ plt.scatter(grade_slow, bumpy_slow, color = "r", label="slow")
 plt.legend()
 plt.xlabel("bumpiness")
 plt.ylabel("grade")
-plt.show()
+# plt.show()
 ################################################################################
 
 
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.metrics import accuracy_score
 
-
+clf = AdaBoostClassifier()
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+print accuracy_score(labels_test, pred)
 
 
 
